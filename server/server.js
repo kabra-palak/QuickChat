@@ -26,6 +26,10 @@ app.use(
 // Middleware
 app.use(express.json({ limit: "4mb" }));
 
+app.get("/", (req, res) => {
+  res.send("Backend root — working ✅");
+});
+
 // Routes
 app.use("/api/status", (req, res) => res.send("Server is live"));
 app.use("/api/auth", userRouter);
